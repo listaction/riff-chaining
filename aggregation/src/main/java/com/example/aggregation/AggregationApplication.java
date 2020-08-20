@@ -1,6 +1,7 @@
 package com.example.aggregation;
 
 import org.json.JSONArray;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -18,8 +19,17 @@ import java.util.stream.Collectors;
 @SpringBootApplication
 public class AggregationApplication {
 
-	private final static String TRANSACTIONS = "http://knative-transactions.default.svc.cluster.local";
-	private final static String BALANCE = "http://knative-balance.default.svc.cluster.local";
+	private final String TRANSACTIONS ;
+	private final String BALANCE ;
+
+
+	public AggregationApplication (@Value("${transactions.url:http://knative-transactions.default.svc.cluster.local}") String trasanctions,
+								   @Value("${balance.url:http://knative-balance.default.svc.cluster.local}") String balance) {
+		this.TRANSACTIONS = trasanctions;
+		this.BALANCE = balance;
+	}
+
+
 
 	@Bean
 	public Function<String, CombinedBalance> aggregation() {
