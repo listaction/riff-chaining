@@ -1,0 +1,14 @@
+# DO NOT EDIT - this file is the output of the 'riff-application-clusterbuilder.yaml.tpl' template 
+apiVersion: build.pivotal.io/v1alpha1
+kind: ClusterBuilder
+metadata:
+    name: riff-application
+spec:
+    image: index.docker.io/cloudfoundry/cnb@sha256:9c1eae30dd7a45b77b483b6dd6a792c86c9536e9bfadcd809797510936554434
+---
+apiVersion: build.pivotal.io/v1alpha1
+kind: ClusterBuilder
+metadata:
+    name: riff-function
+spec:
+    image: projectriff/builder:dev-219d7c4f67f55b0aa273df82b67c0079@sha256:4581de50978c51ba2f293293110841f3ff06365bd57a5b1fb925b9ee6c6e4e4c
