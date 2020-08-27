@@ -11,4 +11,4 @@ kind: ClusterBuilder
 metadata:
     name: riff-function
 spec:
-    image: projectriff:builder@sha256:136bea967b99e41497664896ca8b8829cc96b75405edcc31b5e111ad0415c399
+    image: listaction/builder@sha256:b7269a00b941fd69c8c5cbb0c80ec79e30471838ec11a42f7f31047cde47880c
